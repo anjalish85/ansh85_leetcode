@@ -1,22 +1,32 @@
 class MyHashSet {
-    vector <int> m;
+    vector<list <int>> m;
     int s;
 public:
     MyHashSet() {
         s=1e6+1;
 m.resize(s);
     }
-    
-    void add(int key) {
-        m[key]=1;
+    int hash(int key){
+        return key%s;
     }
-    
+    void add(int key) {
+        if(contains(key))   return;
+        int i=hash(key);
+        m[i].push_back(key);
+    }
+    list<int> :: iterator search(int key){
+        int i=hash(key);
+        return find(m[i].begin(),m[i].end(),key);
+    }
     void remove(int key) {
-         m[key]=0;
+        if(!contains(key))  return;
+         int i=hash(key);
+        m[i].erase(search(key));
     }
     
     bool contains(int key) {
-        if(m[key])  return true;
+        int i=hash(key);
+        if(search(key)!=m[i].end())  return true;
         else    return false;
     }
 };
