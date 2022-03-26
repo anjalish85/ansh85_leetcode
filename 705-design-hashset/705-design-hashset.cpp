@@ -3,7 +3,7 @@ class MyHashSet {
     int s;
 public:
     MyHashSet() {
-        s=1000;
+        s=100;
 m.resize(s);
     }
     int hash(int key){
