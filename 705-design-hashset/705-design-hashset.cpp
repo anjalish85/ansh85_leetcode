@@ -1,36 +1,24 @@
 class MyHashSet {
+    vector <int> m;
+    int s;
 public:
-     int siz;
-    vector <list <int>> m;
     MyHashSet() {
-        siz=1e6+1;
-        m.resize(siz);      //since vector was not declared with size hence here we are declaring it
-    }
-    int hash(int key){
-        return key%siz;
-    }
-    list <int>::iterator search(int key){
-        int i=hash(key);
-        return find(m[i].begin(),m[i].end(),key);
-    }
-    bool contains(int key) {
-         int i=hash(key);
-        if(search(key)!=m[i].end()) return true;       //end is non existing
-        else return false;
-    }
-    void add(int key) {
-        if(contains(key))   
-            return ;
-         int i=hash(key);
-        m[i].push_back(key);
-    }
-    void remove(int key) {
-       if(!contains(key))   return ;
-         int i=hash(key);
-        m[i].erase(search(key));
+        s=1e6+1;
+m.resize(s);
     }
     
-   
+    void add(int key) {
+        m[key]=1;
+    }
+    
+    void remove(int key) {
+         m[key]=0;
+    }
+    
+    bool contains(int key) {
+        if(m[key])  return true;
+        else    return false;
+    }
 };
 
 /**
