@@ -3,9 +3,9 @@ public:
     bool containsNearbyDuplicate(vector<int>& nums, int k) {
         int siz=nums.size();
         set <int> s(nums.begin(),nums.end());
-        cout<<siz<<endl<<s.size();
+        // cout<<siz<<endl<<s.size();
         if((nums.size()-s.size())==0){
-            return false;
+            return 0;
         }
         else{
             for(int i=0;i<siz;i++){
