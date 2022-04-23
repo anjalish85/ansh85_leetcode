@@ -7,9 +7,8 @@ public:
         string addon = to_string(n);
         string ans="http://tinyurl.com/";
         ans+=addon;
-        m[ans]=longUrl;
+        m[ans]=longUrl;n++;
         return ans;
-        n++;
     }
 
     // Decodes a shortened URL to its original URL.
