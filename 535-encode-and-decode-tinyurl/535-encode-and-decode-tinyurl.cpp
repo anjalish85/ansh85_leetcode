@@ -6,7 +6,7 @@ public:
     string encode(string longUrl) {
         string addon = to_string(n);
         string ans="http://tinyurl.com/";
-        ans+=(string)addon;
+        ans+=addon;
         m[ans]=longUrl;
         return ans;
         n++;
