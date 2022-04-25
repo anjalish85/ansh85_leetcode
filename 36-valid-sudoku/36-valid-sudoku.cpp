@@ -7,11 +7,14 @@ public:
         for(int i=0;i<9;i++){
             for(int j=0;j<9;j++){
                 if(board[i][j]!='.'){
-                    
+                    //row checking
                     if(count(s.begin(),s.end(),"row"+to_string(i)+to_string(board[i][j])))
                         return 0;
+                    //agr mila toh thik nhi toh else part m jkkr add ho jyga
+                    //column checking
                     else if(count(s.begin(),s.end(),"column"+to_string(j)+to_string(board[i][j])))
                         return 0;
+                    //in box checking
                     else if(count(s.begin(),s.end(),"box"+to_string((i/3)*3+j/3)+to_string(board[i][j])))
                         return 0;
                         
