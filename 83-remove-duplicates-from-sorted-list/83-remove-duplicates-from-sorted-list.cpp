@@ -15,9 +15,9 @@ public:
        while(node != NULL){
        if((node->next != NULL) && (node->next->val == node->val))
        {
-           ListNode* oldNext = node->next;
+           // ListNode* oldNext = node->next;
            node->next = node->next->next;
-           delete oldNext;
+           // delete oldNext;
        }
        else
            node = node->next;
