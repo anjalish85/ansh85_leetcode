@@ -15,7 +15,8 @@ public:
         if(first==-1 && last==-1)   return 0;
         return last-first+1;
 
-    }};
+    }
+};
 
 // vector <int> nums2(nums.begin(),nums.end());
 //         sort(nums2.begin(),nums2.end());
