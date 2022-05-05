@@ -15,12 +15,14 @@ class MyStack {
     int pop() {
         
         int res;
+        
         while(!primary.empty())
         {
             if(primary.size() == 1)
                 res = primary.front();
             else
                 sec.push(primary.front());
+            
             primary.pop();
         }
         
