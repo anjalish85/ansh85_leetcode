@@ -3,22 +3,23 @@ public:
     string removeDuplicates(string s, int k) {
         vector <pair<char,int>> p;
         string ans;
-        for (auto c: s){
-            if(p.empty() || p.back().first!=c){
+       
+        for(auto c: s){
+            if(p.empty() || p.back().first !=c){
                 p.push_back({c,1});
             }
             else{
                 p.back().second++;
-                if( p.back().second==k){
+                if(p.back().second==k){
                     p.pop_back();
                 }
             }
         }
-        for(auto ele:p){
-            ans.append(ele.second,ele.first);
+        
+        for(auto c:p){
+            ans.append(c.second,c.first);
         }
         return ans;
-        
     }
 };
 
