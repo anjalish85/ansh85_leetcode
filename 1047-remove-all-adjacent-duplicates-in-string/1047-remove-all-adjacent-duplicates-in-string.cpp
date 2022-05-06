@@ -12,14 +12,7 @@ public:
                 ans.push_back(s[i]);
             }
         }
-        
-//         while(!c.empty()){
-//             ans=ans+c.top();
-//             c.pop();
-//         }
-        
-        // revers/=e(ans.begin(),ans.end());
+    
         return ans;
-        // return c;
     }
 };
