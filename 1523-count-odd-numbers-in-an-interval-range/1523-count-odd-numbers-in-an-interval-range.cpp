@@ -7,7 +7,7 @@ public:
         //         count++;
         // }
         // return count;
-        if((low%2==1) && (high%2==1))
+        if((low%2==1) && (high%2==1))//for odd odd number range
             return (high-low)/2 +1;
         else
             return (high-low+1)/2;
