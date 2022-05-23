@@ -24,18 +24,32 @@ public:
         //     }
         // }
         // return head;
+        
         while(head && head->val==val){
             head=head->next;
         }
-        ListNode *temp=head;
-        while(temp){
-            if(temp->next && temp->next->val==val){
-                temp->next = temp->next->next;
+        ListNode* t=head;
+        while (t){
+            if((t->next!=NULL) && (t->next->val==val)){
+                t->next=t->next->next;
             }
             else{
-                temp=temp->next;
+                t=t->next;
             }
         }
         return head;
+        // while(head && head->val==val){
+        //     head=head->next;
+        // }
+        // ListNode *temp=head;
+        // while(temp){
+        //     if(temp->next && temp->next->val==val){
+        //         temp->next = temp->next->next;
+        //     }
+        //     else{
+        //         temp=temp->next;
+        //     }
+        // }
+        // return head;
     }
 };
