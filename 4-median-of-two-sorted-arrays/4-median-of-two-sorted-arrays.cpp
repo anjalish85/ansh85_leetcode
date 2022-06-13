@@ -9,7 +9,7 @@ public:
         // for(auto a: nums){
         //     cout<<a<<endl;
         // }
-        if((nums.size()%2)==0){
+        if(!(nums.size()%2)){
             return (nums[(nums.size())/2]+nums[(nums.size()-2)/2])/2.0;
         }
         else{
