@@ -1,19 +1,19 @@
 class Solution {
 public:
-    bool issafe(string s,string str){
-        for(int i=0;i<s.length();i+=str.length()){
+    bool fn(string s, string str){
+        for(int i=0;i<s.size();i+=str.size()){
             string cs=s.substr(i,str.length());
-            if(cs!=str) return false;
+            if(cs!=str)     return 0;
         }
-        return true;
+        return 1;
     }
     bool repeatedSubstringPattern(string s) {
         string str="";
-        for(int i=0;i<s.length()/2;i++){
+        for(int i=0;i<s.size()/2;i++){
             str+=s[i];
-            if(s.length()%str.length()==0){
-                bool x=issafe(s.substr(i+1),str);
-                if(x)   return true;
+            if((s.size()%str.size())==0){
+                bool x=fn(s.substr(i+1), str);
+                if(x)       return 1;
             }
         }
         return 0;
