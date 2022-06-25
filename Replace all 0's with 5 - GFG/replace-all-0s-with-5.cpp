@@ -8,28 +8,18 @@ using namespace std;
 class Solution{
   public:
     /*you are required to complete this method*/
-    int rev(int n){
-        int num=0;
-        while (n>0){
-        int rem = n%10;
-        num= num*10 +rem;
-        n=n/10;
-    }
-    return num;
-    }
+    
     int convertFive(int n)
     {
     //Your code here
-    int num=0;
-    while (n>0){
-        int rem = n%10;
-        if(rem==0){
-            rem=5;
-        }
-        num= num*10 +rem;
-        n=n/10;
+    if (n == 0)
+        return 0;
+    //https://media.geeksforgeeks.org/img-practice/play-1596780125.svg
+    int d=n%10;
+    if(d==0){
+        d=5;
     }
-    return rev(num);//https://media.geeksforgeeks.org/img-practice/play-1596780125.svg
+    return (convertFive(n/10)*10) + d;
     }
 };
 
