@@ -8,6 +8,10 @@ public:
         
         for(int i=0;i<s.size();i++){
             if( m.find(s[i])==m.end() ){
+                for(auto a: m){
+                    if(a.second==t[i])
+                        return 0;
+                }
                 m[s[i]]=t[i];
             }
             else{
@@ -15,17 +19,17 @@ public:
                     return 0;
             }
         }
-        swap(s,t);
         
-        for(int i=0;i<s.size();i++){
-            if( mp.find(s[i])==mp.end() ){
-                mp[s[i]]=t[i];
-            }
-            else{
-                if(mp[s[i]]!=t[i])
-                    return 0;
-            }
-        }
+//         swap(s,t);
+//         for(int i=0;i<s.size();i++){
+//             if( mp.find(s[i])==mp.end() ){
+//                 mp[s[i]]=t[i];
+//             }
+//             else{
+//                 if(mp[s[i]]!=t[i])
+//                     return 0;
+//             }
+//         }
         return 1;
     }
 };
