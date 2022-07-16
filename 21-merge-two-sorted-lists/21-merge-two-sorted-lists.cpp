@@ -10,28 +10,27 @@
  */
 class Solution {
 public:
+    
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
-       ListNode *dummy, *temp;
-        dummy = new ListNode();
-        temp = dummy;
+        ListNode * t2= new ListNode();
+        ListNode * t1= t2;
         
-        //when both list1 and list2 isn't empty
         while(list1 && list2){
             if(list1->val < list2->val){
-                temp->next = list1;
-                list1 = list1->next;
+                t1-> next=list1;
+                list1=list1->next;
             }
             else{
-                temp->next = list2;
-                list2 = list2->next;   
+                t1-> next=list2;
+                list2=list2->next;
             }
-            temp = temp->next;
+            t1 = t1->next;
         }
         
-        // we reached at the end of one of the list
-        if(list1) temp->next = list1;
-        if(list2) temp->next = list2;
+        if (list1)  t1->next=list1;
+        if (list2)  t1->next=list2;
         
-        return dummy->next;
+        return t2->next;
+        
     }
 };
