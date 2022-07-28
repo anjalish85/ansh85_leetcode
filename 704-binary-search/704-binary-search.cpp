@@ -1,27 +1,22 @@
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
-        if(!count(nums.begin(), nums.end(), target)){
-            return -1;    
-        }
+        int l=0;
+        int r=nums.size()-1;
         
-        int start = 0;
-        int end = nums.size() - 1;
-        
-        while(start < end){
-            int mid = (start + end) / 2;
-            
-            if(nums[mid] == target){
+        while(l<=r){
+            int mid=(l+r)/2;
+            if(nums[mid]==target){
                 return mid;
             }
-            else if(nums[mid] > target){
-                end = mid - 1;
+            else if(nums[mid]>target){
+                r=mid-1;
             }
             else{
-                start = mid + 1;
+                l=mid+1;
             }
         }
         
-        return start;
+        return -1;
     }
 };
