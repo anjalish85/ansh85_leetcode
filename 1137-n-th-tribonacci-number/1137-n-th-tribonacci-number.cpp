@@ -12,6 +12,7 @@ public:
             v[i]=(v[i-1]+v[i-2]+v[i-3]);
         }
         
+        //since series is also 0 indexed therefore no need to do -1
         return v[n];
     }
 };
