@@ -1,6 +1,7 @@
 class Solution {
 public:
     bool backspaceCompare(string s, string t) {
+        //since we have to delete letter based on most recentt character iterated thereffore stack is implemented
         stack <char> s1;
         stack <char> t1;
         
