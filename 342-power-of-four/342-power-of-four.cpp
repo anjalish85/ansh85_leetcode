@@ -9,6 +9,7 @@ public:
             n=n/4;
         }
         
+        //in case number is ==1 after division by four then it's power of four or else it's just a number but not a power of four 
         return (n==1);
     }
 };
