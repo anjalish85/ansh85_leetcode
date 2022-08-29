@@ -1,6 +1,7 @@
 class Solution {
 public:
     int pivotIndex(vector<int>& nums) {
+// more complex one (time)
         // int ls=0;
         // int rs=0;
         // for(int i=0;i<nums.size();i++){
@@ -15,11 +16,14 @@ public:
         // }
         // return -1;     
         
+// less complex one (time) 
         int l=0;
         int s=0;
+        //calculating sum
         for(int i=0; i<nums.size(); i++){
             s+=nums[i];
         }
+        //checking for pivot once for all
         for(int i=0; i<nums.size(); i++){
             s-=nums[i];
             if(l==s)
